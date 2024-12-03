@@ -20,7 +20,7 @@ const Banner = () => {
             ❯
           </a>
         </div>
-        <h1 className="lg:text-5xl md:text-2xl text-xl absolute lg:w-1/2 md:w-3/4 w-[60%] mx-auto lg:left-80 md:left-24 left-20 md:top-36 top-16 lg:top-60 text-center bg-amber-400 text-black p-5">
+        <h1 className="lg:text-5xl md:text-2xl text-xl absolute lg:w-1/2 md:w-3/4 w-[60%] mx-auto lg:left-80 md:left-24 left-20 md:top-40 top-16 lg:top-60 text-center bg-amber-400 text-black p-5">
           Buy The Best Sports Equipment In Few Simple Clicks
         </h1>
       </div>
@@ -40,7 +40,7 @@ const Banner = () => {
             ❯
           </a>
         </div>
-        <h1 className="lg:text-5xl md:text-2xl text-xl absolute lg:w-1/2 md:w-3/4 w-[60%] mx-auto lg:left-80 md:left-24 left-20 md:top-36 top-16 lg:top-60 text-center bg-amber-400 text-black p-5">
+        <h1 className="lg:text-5xl md:text-2xl text-xl absolute lg:w-1/2 md:w-3/4 w-[60%] mx-auto lg:left-80 md:left-24 left-20 md:top-40 top-16 lg:top-60 text-center bg-amber-400 text-black p-5">
           Create Account And Make Your Own Equipment List
         </h1>
       </div>
@@ -60,7 +60,7 @@ const Banner = () => {
             ❯
           </a>
         </div>
-        <h1 className="lg:text-5xl md:text-2xl text-xl absolute lg:w-1/2 md:w-3/4 w-[60%] mx-auto lg:left-80 md:left-24 left-20 md:top-36 top-16 lg:top-60 text-center bg-amber-400 text-black p-5">
+        <h1 className="lg:text-5xl md:text-2xl text-xl absolute lg:w-1/2 md:w-3/4 w-[60%] mx-auto lg:left-80 md:left-24 left-20 md:top-40 top-16 lg:top-60 text-center bg-amber-400 text-black p-5">
           Buy All Kinds Of Sports Accessories In Affordable Price
         </h1>
       </div>
