@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link, NavLink } from "react-router-dom";
+import logoIcon from "../assets/sports.png";
 
 const Navbar = () => {
   const { user } = useContext(AuthContext);
@@ -68,10 +69,17 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="md:text-3xl text-xl">
-          <span className="text-white">Equi</span>
-          <span className="text-amber-500">Sports</span>
-        </a>
+        <div className="flex gap-2">
+          <div>
+            <a className="md:text-3xl text-xl">
+              <span className="text-white">Equi</span>
+              <span className="text-amber-500">Sports</span>
+            </a>
+          </div>
+          <div>
+            <img className="w-10" src={logoIcon} alt="" />
+          </div>
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>

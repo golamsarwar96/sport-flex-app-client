@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 
 const MainLayout = () => {
   return (
-    <div className="font-montserrat font-bold max-w-6xl mx-auto">
+    <div className="font-montserrat font-bold max-w-7xl mx-auto">
       <section>
         <Navbar></Navbar>
       </section>
