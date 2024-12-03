@@ -5,10 +5,10 @@ import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   const { user } = useContext(AuthContext);
   const links = (
-    <div className="flex gap-3 items-center">
+    <div className="flex gap-3 p-2 bg-cyan-950  border-none rounded-xl lg:items-center flex-col lg:flex-row  text-white">
       <NavLink
         className={({ isActive }) =>
-          isActive ? "text-white bg-amber-600 px-4 py-2 rounded-3xl" : ""
+          isActive ? "bg-amber-500 px-4 py-2 rounded-3xl" : ""
         }
         to="/"
       >
@@ -16,7 +16,7 @@ const Navbar = () => {
       </NavLink>
       <NavLink
         className={({ isActive }) =>
-          isActive ? "text-white bg-amber-600 px-4 py-2 rounded-3xl" : ""
+          isActive ? "bg-amber-500 px-4 py-2 rounded-3xl" : ""
         }
         to="/allequipment"
       >
@@ -24,7 +24,7 @@ const Navbar = () => {
       </NavLink>
       <NavLink
         className={({ isActive }) =>
-          isActive ? "text-white bg-amber-600 px-4 py-2 rounded-3xl" : ""
+          isActive ? "bg-amber-500 px-4 py-2 rounded-3xl" : ""
         }
         to="addequipment"
       >
@@ -32,7 +32,7 @@ const Navbar = () => {
       </NavLink>
       <NavLink
         className={({ isActive }) =>
-          isActive ? "text-white bg-amber-600 px-4 py-2 rounded-3xl" : ""
+          isActive ? "bg-amber-500 px-4 py-2 rounded-3xl" : ""
         }
         to="/myequipment"
       >
@@ -42,9 +42,9 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-cyan-950">
       <div className="navbar-start">
-        <div className="dropdown">
+        <div className="dropdown text-white">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -68,8 +68,9 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="text-3xl">
-          Sport<span className="text-amber-500">Flex</span>
+        <a className="md:text-3xl text-xl">
+          <span className="text-white">Equi</span>
+          <span className="text-amber-500">Sports</span>
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -77,10 +78,14 @@ const Navbar = () => {
       </div>
       <div className="navbar-end flex gap-3">
         <Link to="/login">
-          <button className="btn btn-warning px-7">Login</button>
+          <button className=" bg-amber-500 border-none text-white md:px-4 md:py-2 px-3 py-1 rounded-full">
+            Login
+          </button>
         </Link>
         <Link to="/register">
-          <button className="btn btn-warning px-7">Register</button>
+          <button className=" bg-amber-500 border-none  text-white  md:px-4 md:py-2 px-3 py-1 rounded-full">
+            Register
+          </button>
         </Link>
       </div>
     </div>
