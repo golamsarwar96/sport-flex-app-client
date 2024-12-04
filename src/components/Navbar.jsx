@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import logoIcon from "../assets/sports.png";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const links = (
     <div className="flex gap-3 p-2 bg-cyan-950  border-none rounded-xl lg:items-center flex-col lg:flex-row  text-white">
       <NavLink
@@ -85,16 +85,38 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end flex gap-3">
-        <Link to="/login">
-          <button className=" bg-amber-500 border-none text-white md:px-4 md:py-2 px-3 py-1 rounded-full">
-            Login
+        {user && user?.email ? (
+          <div className="flex text-sm items-center gap-2 text-white  font-semibold rounded-3xl">
+            <img
+              title={user?.displayName}
+              className="w-10 rounded-full"
+              src={user?.photoURL}
+              alt=""
+            />
+            <p className="text-xs">{user.displayName}</p>
+            <p className="text-xs">{user.email}</p>
+          </div>
+        ) : (
+          <Link to="/login">
+            <button className=" bg-amber-500 border-none text-white md:px-4 md:py-2 px-3 py-1 rounded-full">
+              Login
+            </button>
+          </Link>
+        )}
+        {user && user?.email ? (
+          <button
+            onClick={logOut}
+            className="bg-amber-500 border-none  text-white  md:px-4 md:py-2 px-3 py-1 rounded-full"
+          >
+            Log Out
           </button>
-        </Link>
-        <Link to="/register">
-          <button className=" bg-amber-500 border-none  text-white  md:px-4 md:py-2 px-3 py-1 rounded-full">
-            Register
-          </button>
-        </Link>
+        ) : (
+          <Link to="/register">
+            <button className=" bg-amber-500 border-none  text-white  md:px-4 md:py-2 px-3 py-1 rounded-full">
+              Register
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );

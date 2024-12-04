@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Login = () => {
-  const { userLogin } = useContext(AuthContext);
+  const { userLogin, setUser } = useContext(AuthContext);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -12,7 +13,23 @@ const Login = () => {
     const password = form.password.value;
 
     userLogin(email, password)
-      .then((result) => console.log(result))
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        toast.success("Logged In Successfully");
+        const lastSignInTime = result?.user?.metadata?.lastSignInTime;
+        const loginInfo = { email, lastSignInTime };
+
+        fetch(`http://localhost:5000/users`, {
+          method: "PATCH",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(loginInfo),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+          });
+      })
       .catch((error) => console.error(error));
   };
 
