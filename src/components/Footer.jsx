@@ -7,8 +7,8 @@ const Footer = () => {
         <img src={logoIcon} className="w-16" alt="Logo" />
         <div>
           <a className="md:text-3xl text-xl">
-            <span className="text-white">Equi</span>
-            <span className="text-amber-500">Sports</span>
+            <span className="text-white">Sport</span>
+            <span className="text-amber-500">Flex</span>
           </a>
         </div>
       </aside>

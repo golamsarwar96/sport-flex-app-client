@@ -72,8 +72,8 @@ const Navbar = () => {
         <div className="flex gap-2">
           <div>
             <a className="md:text-3xl text-xl">
-              <span className="text-white">Equi</span>
-              <span className="text-amber-500">Sports</span>
+              <span className="text-white">Sport</span>
+              <span className="text-amber-500">Flex</span>
             </a>
           </div>
           <div>

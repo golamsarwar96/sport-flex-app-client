@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const { createUser, setUser, updateUserProfile } = useContext(AuthContext);
@@ -16,6 +17,15 @@ const Register = () => {
 
     console.log(name, email, password);
 
+    //Password Validation
+    // const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{6,}$/;
+    // if (!regex.test(password)) {
+    //   toast.error(
+    //     "The password must be 6 characters & should contain at least one uppercase letter and one lowercase letter."
+    //   );
+    //   return;
+    // }
+    //Creating User
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
