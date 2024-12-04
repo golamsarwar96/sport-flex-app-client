@@ -3,11 +3,18 @@ import { Link, useHref } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import toast from "react-hot-toast";
 import { FaEye } from "react-icons/fa";
+import Loading from "../components/Loading";
+import { BsGoogle } from "react-icons/bs";
 
 const Login = () => {
-  const { userLogin, setUser } = useContext(AuthContext);
+  const { userLogin, setUser, loading, setLoading, signInWithGoogle } =
+    useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const emailRef = useRef();
+
+  if (loading) {
+    return <Loading></Loading>;
+  }
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -33,7 +40,23 @@ const Login = () => {
             console.log(data);
           });
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        toast.error(error.message);
+        setLoading(false);
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        toast.success("Google Login Successful");
+        // console.log(user);
+        setUser(user);
+      })
+      .catch((err) => {
+        toast.error(err.message);
+      });
   };
 
   return (
@@ -83,6 +106,14 @@ const Login = () => {
           </div>
           <div className="form-control mt-6">
             <button className="btn btn-primary">Login</button>
+          </div>
+          <div>
+            <button
+              onClick={handleGoogleSignIn}
+              className="btn btn-primary w-full"
+            >
+              <BsGoogle></BsGoogle> Sign In With Google
+            </button>
           </div>
           <h1 className="text-center mt-4">
             New to SportFlex ?{" "}

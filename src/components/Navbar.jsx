@@ -2,9 +2,11 @@ import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link, NavLink } from "react-router-dom";
 import logoIcon from "../assets/sports.png";
+import Loading from "./Loading";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+
   const links = (
     <div className="flex gap-3 p-2 bg-cyan-950  border-none rounded-xl lg:items-center flex-col lg:flex-row  text-white">
       <NavLink

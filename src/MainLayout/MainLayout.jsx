@@ -8,10 +8,6 @@ import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 
 const MainLayout = () => {
-  const { loading } = useContext(AuthContext);
-  if (loading) {
-    return <Loading></Loading>;
-  }
   return (
     <div className="font-montserrat font-bold max-w-7xl mx-auto">
       <Toaster></Toaster>

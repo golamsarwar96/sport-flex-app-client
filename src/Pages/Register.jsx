@@ -3,9 +3,14 @@ import { AuthContext } from "../provider/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
+import Loading from "../components/Loading";
 
 const Register = () => {
-  const { createUser, setUser, updateUserProfile } = useContext(AuthContext);
+  const { createUser, setUser, updateUserProfile, loading } =
+    useContext(AuthContext);
+  if (loading) {
+    return <Loading></Loading>;
+  }
   const navigate = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
@@ -17,6 +22,13 @@ const Register = () => {
 
     console.log(name, email, password);
 
+    //Name length validation
+    // if (name.length < 5) {
+    //   setError({ ...error, name: "Name must be at least 5 characters long." });
+    //   toast.error("Name must be more than 5 characters long.");
+    //   return;
+    // }
+
     //Password Validation
     // const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{6,}$/;
     // if (!regex.test(password)) {
@@ -25,6 +37,7 @@ const Register = () => {
     //   );
     //   return;
     // }
+
     //Creating User
     createUser(email, password)
       .then((result) => {
@@ -66,7 +79,7 @@ const Register = () => {
           });
       })
       .catch((err) => {
-        console.log(err.message);
+        toast.error(err.message);
       });
   };
   return (
