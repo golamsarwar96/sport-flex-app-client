@@ -7,6 +7,7 @@ import AddEquipment from "../components/AddEquipment";
 import MyEquipment from "../components/MyEquipment";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import ResetPassword from "../Pages/ResetPassword";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
   {
     path: "*",
     element: <ErrorPage></ErrorPage>,
+  },
+  {
+    path: "/resetpassword",
+    element: <ResetPassword></ResetPassword>,
   },
 ]);
 

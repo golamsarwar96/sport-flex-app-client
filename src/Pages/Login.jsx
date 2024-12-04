@@ -1,10 +1,13 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useRef, useState } from "react";
+import { Link, useHref } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import toast from "react-hot-toast";
+import { FaEye } from "react-icons/fa";
 
 const Login = () => {
   const { userLogin, setUser } = useContext(AuthContext);
+  const [showPassword, setShowPassword] = useState(false);
+  const emailRef = useRef();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -46,6 +49,7 @@ const Login = () => {
               type="email"
               placeholder="email"
               name="email"
+              ref={emailRef}
               className="input input-bordered"
               required
             />
@@ -55,16 +59,26 @@ const Login = () => {
               <span className="label-text">Password</span>
             </label>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               placeholder="password"
               name="password"
               className="input input-bordered"
               required
             />
+            <button
+              onClick={() => setShowPassword(!showPassword)}
+              className="btn btn-sm absolute rounded-full right-10 top-[168px] bg-white border-none"
+            >
+              <FaEye></FaEye>
+            </button>
+
             <label className="label">
-              <a href="#" className="label-text-alt link link-hover">
+              <Link
+                to="/resetpassword"
+                className="label-text-alt link link-hover"
+              >
                 Forgot password?
-              </a>
+              </Link>
             </label>
           </div>
           <div className="form-control mt-6">
