@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -12,18 +14,34 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    const newUser = {
-      name,
-      photo,
-      email,
-      password,
-    };
-
-    console.log(newUser);
+    console.log(name, email, password);
 
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
+        const newUser = {
+          name,
+          photo,
+          email,
+          password,
+        };
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(newUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log("user created to sportflex db", data);
+            if (data.insertedId) {
+              Swal.fire({
+                title: "Success!",
+                text: "User Created successfully.",
+                icon: "success",
+                confirmButtonText: "COOL!",
+              });
+            }
+          });
       })
       .catch((err) => {
         console.log(err.message);
@@ -90,6 +108,12 @@ const Register = () => {
           <div className="form-control mt-6">
             <button className="btn btn-primary">Register</button>
           </div>
+          <h1 className="text-center mt-4">
+            Alreay have an account ?{" "}
+            <Link className="text-cyan-700" to="/login">
+              Login
+            </Link>
+          </h1>
         </form>
       </div>
     </div>
