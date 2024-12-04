@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Login = () => {
+  const { userLogin } = useContext(AuthContext);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    userLogin(email, password)
+      .then((result) => console.log(result))
+      .catch((error) => console.error(error));
+  };
+
   return (
     <div className="flex justify-center items-center gap-5 flex-col my-10">
       <h1 className="text-center text-4xl">Login To SportFlex</h1>
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl relative ">
-        <form className="card-body">
+        <form onSubmit={handleLogin} className="card-body">
           <div className="form-control">
             <label className="label">
               <span className="label-text">Email</span>
@@ -14,6 +28,7 @@ const Login = () => {
             <input
               type="email"
               placeholder="email"
+              name="email"
               className="input input-bordered"
               required
             />
@@ -25,6 +40,7 @@ const Login = () => {
             <input
               type="password"
               placeholder="password"
+              name="password"
               className="input input-bordered"
               required
             />
