@@ -8,6 +8,7 @@ import MyEquipment from "../components/MyEquipment";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import ResetPassword from "../Pages/ResetPassword";
+import Cards from "../components/Cards";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,19 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/equipments"),
+        loader: () => fetch("../categories.json"),
+        children: [
+          {
+            path: "/",
+            element: <Cards></Cards>,
+            loader: () => fetch("http://localhost:5000/equipments/limited"),
+          },
+          {
+            path: "/category/:category",
+            element: <Cards></Cards>,
+            loader: () => fetch("http://localhost:5000/equipments"),
+          },
+        ],
       },
       {
         path: "/allequipment",

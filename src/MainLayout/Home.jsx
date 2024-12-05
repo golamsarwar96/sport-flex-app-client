@@ -2,10 +2,10 @@ import { useContext } from "react";
 import Banner from "../components/Banner";
 import { AuthContext } from "../provider/AuthProvider";
 import Loading from "../components/Loading";
-import { useLoaderData } from "react-router-dom";
-
+import { Outlet, useLoaderData } from "react-router-dom";
+import Categories from "../components/Categories";
 const Home = () => {
-  const equipments = useLoaderData();
+  const categories = useLoaderData();
   const { loading } = useContext(AuthContext);
   if (loading) {
     return <Loading></Loading>;
@@ -15,8 +15,13 @@ const Home = () => {
       <section>
         <Banner></Banner>
       </section>
+
       <section>
-        <h1>Equipments:{equipments.length}</h1>
+        <Categories categories={categories}></Categories>
+      </section>
+
+      <section>
+        <Outlet></Outlet>
       </section>
     </div>
   );
