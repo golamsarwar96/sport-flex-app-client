@@ -9,6 +9,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import ResetPassword from "../Pages/ResetPassword";
 import Cards from "../components/Cards";
+import EquipmentDetails from "../components/EquipmentDetails";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
           },
         ],
       },
+
       {
         path: "/allequipment",
         element: <AllEquipment></AllEquipment>,
@@ -53,8 +55,19 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register></Register>,
       },
+      {
+        path: "/:id",
+        element: <EquipmentDetails></EquipmentDetails>,
+        loader: () => fetch("http://localhost:5000/equipments"),
+      },
+      {
+        path: "allequipment/:id",
+        element: <EquipmentDetails></EquipmentDetails>,
+        loader: () => fetch(`http://localhost:5000/equipments`),
+      },
     ],
   },
+
   {
     path: "*",
     element: <ErrorPage></ErrorPage>,

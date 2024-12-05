@@ -1,8 +1,9 @@
 import { BiStar } from "react-icons/bi";
 import { FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Card = ({ equipment }) => {
-  const { itemName, category, photo, price, rating } = equipment || {};
+  const { _id, itemName, category, photo, price, rating } = equipment || {};
   return (
     <div className="card bg-base-100 w-96 shadow-xl p-3">
       <figure>
@@ -25,9 +26,11 @@ const Card = ({ equipment }) => {
           {rating}
         </p>
         <div className="card-actions flex justify-center">
-          <button className="bg-amber-400 border-none  text-cyan-900  md:px-4 md:py-2 px-3 py-1 rounded-full mt-3">
-            View Details
-          </button>
+          <Link to={`/${_id}`}>
+            <button className="bg-amber-400 border-none  text-cyan-900  md:px-4 md:py-2 px-3 py-1 rounded-full mt-3">
+              View Details
+            </button>
+          </Link>
         </div>
       </div>
     </div>
