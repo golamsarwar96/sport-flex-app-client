@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const AddEquipment = () => {
+  const { user } = useContext(AuthContext);
   const handleAddEquipment = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -48,6 +51,27 @@ const AddEquipment = () => {
         </h2>
 
         <form onSubmit={handleAddEquipment} className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium mb-1">Email</label>
+            <input
+              type="text"
+              placeholder={user && user.email ? `${user.email}` : `Your Email`}
+              name="email"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-800"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1">Name</label>
+            <input
+              type="text"
+              placeholder={
+                user && user.email ? `${user.displayName}` : `Your Name`
+              }
+              name="name"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-800"
+            />
+          </div>
+
           <div>
             <label className="block text-sm font-medium mb-1">Image URL</label>
             <input
