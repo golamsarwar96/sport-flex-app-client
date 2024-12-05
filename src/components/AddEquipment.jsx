@@ -1,4 +1,45 @@
+import { useLoaderData } from "react-router-dom";
+
 const AddEquipment = () => {
+  const handleAddEquipment = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const photo = form.photo.value;
+    const itemName = form.itemName.value;
+    const category = form.category.value;
+    const description = form.description.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const customization = form.customization.value;
+    const processing = form.processing.value;
+    const quantity = form.quantity.value;
+
+    const newEquipment = {
+      photo,
+      itemName,
+      category,
+      description,
+      price,
+      rating,
+      customization,
+      processing,
+      quantity,
+    };
+
+    console.log(newEquipment);
+    e.target.reset();
+    fetch("http://localhost:5000/equipments", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newEquipment),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Equipment Added", data);
+      });
+  };
   return (
     <div className="min-h-screen bg-cyan-900 py-12 px-4">
       <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-sm p-6">
@@ -6,7 +47,7 @@ const AddEquipment = () => {
           Add New Equipment
         </h2>
 
-        <form className="space-y-4">
+        <form onSubmit={handleAddEquipment} className="space-y-4">
           <div>
             <label className="block text-sm font-medium mb-1">Image URL</label>
             <input
@@ -22,7 +63,7 @@ const AddEquipment = () => {
             <input
               type="text"
               placeholder="Enter item name"
-              name="item"
+              name="itemName"
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-800"
             />
           </div>

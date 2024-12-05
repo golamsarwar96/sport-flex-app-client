@@ -37,12 +37,17 @@ const Register = () => {
     //   );
     //   return;
     // }
-
+    e.target.reset();
     //Creating User
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
-
+        const newUser = {
+          name,
+          photo,
+          email,
+          password,
+        };
         updateUserProfile({
           displayName: name,
           photoURL: photo,
@@ -54,12 +59,7 @@ const Register = () => {
             console.log(err);
           });
         setUser(result.user);
-        const newUser = {
-          name,
-          photo,
-          email,
-          password,
-        };
+
         fetch("http://localhost:5000/users", {
           method: "POST",
           headers: { "content-type": "application/json" },

@@ -21,7 +21,7 @@ const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-
+    e.target.reset();
     userLogin(email, password)
       .then((result) => {
         const user = result.user;
