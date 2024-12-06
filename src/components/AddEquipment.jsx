@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import toast from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const AddEquipment = () => {
   const { user } = useContext(AuthContext);
@@ -44,7 +46,14 @@ const AddEquipment = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("Equipment Added", data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Your Equipment Added Successfully",
+            icon: "success",
+            confirmButtonText: "COOL!",
+          });
+        }
       });
   };
   return (
