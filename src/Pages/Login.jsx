@@ -1,5 +1,5 @@
 import React, { useContext, useRef, useState } from "react";
-import { Link, useHref } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import toast from "react-hot-toast";
 import { FaEye } from "react-icons/fa";
@@ -7,6 +7,8 @@ import Loading from "../components/Loading";
 import { BsGoogle } from "react-icons/bs";
 
 const Login = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const { userLogin, setUser, loading, setLoading, signInWithGoogle } =
     useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
@@ -26,6 +28,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         setUser(user);
+        navigate(location?.state ? location.state : "/");
         toast.success("Logged In Successfully");
         const lastSignInTime = result?.user?.metadata?.lastSignInTime;
         const loginInfo = { email, lastSignInTime };
@@ -53,6 +56,7 @@ const Login = () => {
         toast.success("Google Login Successful");
         // console.log(user);
         setUser(user);
+        navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
         toast.error(err.message);

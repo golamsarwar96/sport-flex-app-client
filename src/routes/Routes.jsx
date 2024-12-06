@@ -12,6 +12,8 @@ import Cards from "../components/Cards";
 import EquipmentDetails from "../components/EquipmentDetails";
 import Blog from "../components/Blog";
 import PrivateEquipment from "./PrivateEquipment";
+import PrivateList from "./PrivateList";
+import PrivateDetails from "./PrivateDetails";
 
 const router = createBrowserRouter([
   {
@@ -56,7 +58,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/myequipment",
-        element: <MyEquipment></MyEquipment>,
+        element: (
+          <PrivateList>
+            <MyEquipment></MyEquipment>
+          </PrivateList>
+        ),
         loader: () => fetch("http://localhost:5000/equipments"),
       },
       {
@@ -69,12 +75,20 @@ const router = createBrowserRouter([
       },
       {
         path: "/:id",
-        element: <EquipmentDetails></EquipmentDetails>,
+        element: (
+          <PrivateDetails>
+            <EquipmentDetails></EquipmentDetails>
+          </PrivateDetails>
+        ),
         loader: () => fetch("http://localhost:5000/equipments"),
       },
       {
         path: "allequipment/:id",
-        element: <EquipmentDetails></EquipmentDetails>,
+        element: (
+          <PrivateDetails>
+            <EquipmentDetails></EquipmentDetails>
+          </PrivateDetails>
+        ),
         loader: () => fetch(`http://localhost:5000/equipments`),
       },
     ],
