@@ -89,7 +89,8 @@ const Navbar = () => {
         {user && user?.email ? (
           <div className="flex text-sm items-center gap-2 text-white  font-semibold rounded-3xl">
             <img
-              title={user?.displayName}
+              data-tooltip-id="my-tooltip"
+              data-tooltip-content={user?.displayName}
               className="w-10 rounded-full"
               src={user?.photoURL}
               alt=""
