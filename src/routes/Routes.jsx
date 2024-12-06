@@ -66,12 +66,12 @@ const router = createBrowserRouter([
         ),
         loader: () => fetch("http://localhost:5000/equipments"),
       },
-      {
-        path: "myequipment/updateEquipment/:id",
-        element: <UpdateEquipment></UpdateEquipment>,
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/equipments/${params.id}`),
-      },
+      // {
+      //   path: "myequipment/updateEquipment/:id",
+      //   element: <UpdateEquipment></UpdateEquipment>,
+      //   loader: ({ params }) =>
+      //     fetch(`http://localhost:5000/equipments/${params.id}`),
+      // },
       {
         path: "/login",
         element: <Login></Login>,

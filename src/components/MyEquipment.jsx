@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link, useLoaderData } from "react-router-dom";
-import EquipmentDetails from "./EquipmentDetails";
 import Loading from "./Loading";
 import { BsClock } from "react-icons/bs";
 import { FaStar } from "react-icons/fa";
@@ -15,7 +14,6 @@ const MyEquipment = () => {
   const equipments = useLoaderData();
   console.log(equipments);
   const [myEquipments, setMyEquipments] = useState([]);
-
   useEffect(() => {
     const equipmentList = [...equipments].filter(
       (equipment) => equipment?.email === user?.email
