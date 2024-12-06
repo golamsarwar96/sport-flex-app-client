@@ -47,6 +47,11 @@ const MyEquipment = () => {
                 text: "Your file has been deleted.",
                 icon: "success",
               });
+
+              const remaining = myEquipments.filter(
+                (myEquipment) => myEquipment._id !== _id
+              );
+              setMyEquipments(remaining);
             }
           });
       }
