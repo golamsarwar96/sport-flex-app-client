@@ -11,6 +11,7 @@ import ResetPassword from "../Pages/ResetPassword";
 import Cards from "../components/Cards";
 import EquipmentDetails from "../components/EquipmentDetails";
 import Blog from "../components/Blog";
+import PrivateEquipment from "./PrivateEquipment";
 
 const router = createBrowserRouter([
   {
@@ -47,7 +48,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/addequipment",
-        element: <AddEquipment></AddEquipment>,
+        element: (
+          <PrivateEquipment>
+            <AddEquipment></AddEquipment>,
+          </PrivateEquipment>
+        ),
       },
       {
         path: "/myequipment",

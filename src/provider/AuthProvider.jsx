@@ -44,11 +44,13 @@ const AuthProvider = ({ children }) => {
 
   //Google Sign In
   const signInWithGoogle = () => {
+    setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
 
   //Update User Info
   const updateUserProfile = (updatedData) => {
+    setLoading(true);
     return updateProfile(auth.currentUser, updatedData);
   };
 
@@ -60,6 +62,7 @@ const AuthProvider = ({ children }) => {
 
   //Reset Password
   const resetPassword = (email) => {
+    setLoading(true);
     return sendPasswordResetEmail(auth, email);
   };
 
