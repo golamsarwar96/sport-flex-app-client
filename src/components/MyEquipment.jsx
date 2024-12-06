@@ -1,10 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import EquipmentDetails from "./EquipmentDetails";
 import Loading from "./Loading";
 import { BsClock } from "react-icons/bs";
 import { FaStar } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const MyEquipment = () => {
   const { user, loading } = useContext(AuthContext);
@@ -22,6 +23,37 @@ const MyEquipment = () => {
     console.log(equipmentList);
     setMyEquipments(equipmentList);
   }, []);
+
+  //Deleting
+  const handleDelete = (_id) => {
+    console.log(_id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/equipments/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success",
+              });
+            }
+          });
+      }
+    });
+  };
   return (
     <div className=" my-10">
       <h1 className="text-5xl">My Equipment : {equipments.length}</h1>
@@ -72,15 +104,14 @@ const MyEquipment = () => {
               </p>
             </div>
             <div className="flex gap-2 pt-2 p-5">
-              <button
-                className="px-5 py-2 bg-cyan-950 text-white rounded-3xl"
-                // onClick={handleUpdate}
-              >
-                Update
-              </button>
+              <Link to={`updateEquipment/${equipment._id}`}>
+                <button className="px-5 py-2 text-white bg-cyan-900 rounded-3xl">
+                  Update
+                </button>
+              </Link>
               <button
                 className="px-5 py-2 bg-amber-500 text-cyan-800 rounded-3xl"
-                // onClick={handleDelete}
+                onClick={() => handleDelete(equipment._id)}
               >
                 Delete
               </button>

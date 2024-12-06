@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { FaStar } from "react-icons/fa";
 import { useLoaderData, useParams } from "react-router-dom";
 
 const EquipmentDetails = () => {

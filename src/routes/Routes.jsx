@@ -14,6 +14,7 @@ import Blog from "../components/Blog";
 import PrivateEquipment from "./PrivateEquipment";
 import PrivateList from "./PrivateList";
 import PrivateDetails from "./PrivateDetails";
+import UpdateEquipment from "../components/UpdateEquipment";
 
 const router = createBrowserRouter([
   {
@@ -64,6 +65,12 @@ const router = createBrowserRouter([
           </PrivateList>
         ),
         loader: () => fetch("http://localhost:5000/equipments"),
+      },
+      {
+        path: "myequipment/updateEquipment/:id",
+        element: <UpdateEquipment></UpdateEquipment>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/equipments/${params.id}`),
       },
       {
         path: "/login",
