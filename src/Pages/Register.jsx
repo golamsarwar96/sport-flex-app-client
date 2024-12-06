@@ -4,9 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 import Loading from "../components/Loading";
+import { BsGoogle } from "react-icons/bs";
 
 const Register = () => {
-  const { createUser, setUser, updateUserProfile, loading } =
+  const { createUser, setUser, updateUserProfile, loading, signInWithGoogle } =
     useContext(AuthContext);
   if (loading) {
     return <Loading></Loading>;
@@ -22,21 +23,19 @@ const Register = () => {
 
     console.log(name, email, password);
 
-    //Name length validation
-    // if (name.length < 5) {
-    //   setError({ ...error, name: "Name must be at least 5 characters long." });
-    //   toast.error("Name must be more than 5 characters long.");
-    //   return;
-    // }
+    if (name.length < 5) {
+      setError({ ...error, name: "Name must be at least 5 characters long." });
+      toast.error("Name must be more than 5 characters long.");
+      return;
+    }
 
-    //Password Validation
-    // const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{6,}$/;
-    // if (!regex.test(password)) {
-    //   toast.error(
-    //     "The password must be 6 characters & should contain at least one uppercase letter and one lowercase letter."
-    //   );
-    //   return;
-    // }
+    const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{6,}$/;
+    if (!regex.test(password)) {
+      toast.error(
+        "The password must be 6 characters & should contain at least one uppercase letter and one lowercase letter."
+      );
+      return;
+    }
     e.target.reset();
     //Creating User
     createUser(email, password)
@@ -82,9 +81,23 @@ const Register = () => {
         toast.error(err.message);
       });
   };
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        toast.success("Google Login Successful");
+        // console.log(user);
+        setUser(user);
+      })
+      .catch((err) => {
+        toast.error(err.message);
+      });
+  };
   return (
-    <div className="flex justify-center items-center gap-5 flex-col my-10">
-      <h1 className="text-center text-4xl">Register To SportFlex</h1>
+    <div className="flex justify-center items-center gap-5 flex-col my-10 p-2">
+      <h1 className="text-center text-4xl w-[90%] md:w-full mx-auto">
+        Register To <span className="text-amber-400">SportFlex</span>
+      </h1>
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl relative ">
         <form onSubmit={handleRegister} className="card-body">
           <div className="form-control">
@@ -137,6 +150,14 @@ const Register = () => {
           </div>
           <div className="form-control mt-6">
             <button className="btn btn-primary">Register</button>
+          </div>
+          <div>
+            <button
+              onClick={handleGoogleSignIn}
+              className="btn btn-primary w-full"
+            >
+              <BsGoogle></BsGoogle> Sign In With Google
+            </button>
           </div>
           <h1 className="text-center mt-4">
             Alreay have an account ?{" "}

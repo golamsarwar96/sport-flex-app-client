@@ -3,9 +3,9 @@ import { NavLink, useLoaderData } from "react-router-dom";
 const Categories = ({ categories }) => {
   return (
     <div>
-      <h1 className="text-4xl font-bold text-center mt-10 w-[50%] mx-auto">
+      <h1 className="text-4xl font-bold text-center mt-10 md:w-[50%] mx-auto">
         Visit Different Sport Equipment{" "}
-        <span className="text-amber-500 text-5xl">Categories</span>
+        <span className="text-amber-500 text-center text-5xl">Categories</span>
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center text-center p-10 lg:gap-32 gap-10 md:my-6">
         {categories.map((category) => (
