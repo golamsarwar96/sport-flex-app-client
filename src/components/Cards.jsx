@@ -22,7 +22,7 @@ const Cards = () => {
   return (
     <div>
       <h1 className="text-5xl">{category}</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-10 mb-20">
         {equipments.map((equipment, index) => (
           <Card key={index} equipment={equipment}></Card>
         ))}

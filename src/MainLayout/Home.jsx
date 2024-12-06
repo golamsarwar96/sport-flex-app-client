@@ -4,6 +4,7 @@ import { AuthContext } from "../provider/AuthProvider";
 import Loading from "../components/Loading";
 import { Outlet, useLoaderData } from "react-router-dom";
 import Categories from "../components/Categories";
+import Blog from "../components/Blog";
 const Home = () => {
   const categories = useLoaderData();
   const { loading } = useContext(AuthContext);
@@ -22,6 +23,10 @@ const Home = () => {
 
       <section>
         <Outlet></Outlet>
+      </section>
+
+      <section>
+        <Blog></Blog>
       </section>
     </div>
   );

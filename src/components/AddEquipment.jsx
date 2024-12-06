@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
 const AddEquipment = () => {
@@ -7,6 +6,8 @@ const AddEquipment = () => {
   const handleAddEquipment = (e) => {
     e.preventDefault();
     const form = e.target;
+    const name = user?.displayName;
+    const email = user.email;
     const photo = form.photo.value;
     const itemName = form.itemName.value;
     const category = form.category.value;
@@ -18,6 +19,8 @@ const AddEquipment = () => {
     const quantity = form.quantity.value;
 
     const newEquipment = {
+      name,
+      email,
       photo,
       itemName,
       category,
@@ -28,6 +31,7 @@ const AddEquipment = () => {
       processing,
       quantity,
     };
+    console.log(name, email);
 
     console.log(newEquipment);
     e.target.reset();
@@ -54,15 +58,17 @@ const AddEquipment = () => {
           <div>
             <label className="block text-sm font-medium mb-1">Email</label>
             <input
+              disabled
               type="text"
               placeholder={user && user.email ? `${user.email}` : `Your Email`}
               name="email"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-800"
+              className=" w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-800"
             />
           </div>
           <div>
             <label className="block text-sm font-medium mb-1">Name</label>
             <input
+              disabled
               type="text"
               placeholder={
                 user && user.email ? `${user.displayName}` : `Your Name`

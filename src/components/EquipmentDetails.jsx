@@ -18,14 +18,28 @@ const EquipmentDetails = () => {
           src={equipments.photo}
           className=" w-[370px] h-[450px] object-cover rounded-lg shadow-2xl"
         />
-        <div className="space-y-2 text-white w-[50%]">
-          <h1 className="text-5xl font-bold">{equipments.itemName}</h1>
-          <p className="text-sm">{equipments.description}</p>
-          <p className="text-2xl">Cateogry : {equipments.category}</p>
-          <p className="text-xl">Price : ${equipments.price}</p>
-          <p>Customization : {equipments.customization}</p>
-          <p>Quantity : {equipments.quantity}</p>
-          <p>Processing Time : {equipments.processing}</p>
+        <div className="space-y-2 text-white md:w-[50%]">
+          <h1 className="text-5xl font-bold text-center md:text-left">
+            {equipments.itemName}
+          </h1>
+          <p className="text-sm text-center md:text-left">
+            {equipments.description}
+          </p>
+          <p className="text-2xl text-center md:text-left">
+            Cateogry : {equipments.category}
+          </p>
+          <p className="text-xl text-center md:text-left">
+            Price : ${equipments.price}
+          </p>
+          <p className="text-center md:text-left">
+            Customization : {equipments.customization}
+          </p>
+          <p className="text-center md:text-left">
+            Quantity : {equipments.quantity}
+          </p>
+          <p className="text-center md:text-left">
+            Processing Time : {equipments.processing}
+          </p>
         </div>
       </div>
     </div>

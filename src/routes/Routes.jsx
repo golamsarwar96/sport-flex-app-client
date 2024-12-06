@@ -10,6 +10,7 @@ import Register from "../Pages/Register";
 import ResetPassword from "../Pages/ResetPassword";
 import Cards from "../components/Cards";
 import EquipmentDetails from "../components/EquipmentDetails";
+import Blog from "../components/Blog";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,11 @@ const router = createBrowserRouter([
             loader: () => fetch("http://localhost:5000/equipments"),
           },
         ],
+      },
+      {
+        path: "/",
+        element: <Blog></Blog>,
+        loader: () => fetch("../blog.json"),
       },
 
       {

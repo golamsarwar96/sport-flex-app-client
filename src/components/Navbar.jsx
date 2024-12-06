@@ -70,7 +70,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-2 justify-center items-center">
           <div>
             <a className="md:text-3xl text-xl">
               <span className="text-white">Sport</span>
@@ -94,8 +94,8 @@ const Navbar = () => {
               src={user?.photoURL}
               alt=""
             />
-            <p className="text-xs">{user.displayName}</p>
-            <p className="text-xs">{user.email}</p>
+            {/* <p className="text-xs">{user.displayName}</p>
+            <p className="text-xs">{user.email}</p> */}
           </div>
         ) : (
           <Link to="/login">
