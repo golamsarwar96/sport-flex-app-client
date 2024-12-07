@@ -92,6 +92,7 @@ const Navbar = () => {
             <img
               data-tooltip-id="my-tooltip"
               data-tooltip-content={user?.displayName}
+              data-tooltip-place="left"
               className="w-10 rounded-full"
               src={user?.photoURL}
               alt=""

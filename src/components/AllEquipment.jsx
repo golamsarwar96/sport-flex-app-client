@@ -12,8 +12,13 @@ const AllEquipment = () => {
 
   return (
     <div className="overflow-x-auto my-10 p-4 m:p-0">
-      <div>
-        <button onClick={handleSort}>Sort</button>
+      <div className="flex justify-end">
+        <button
+          className="bg-cyan-950 text-white px-8 py-3 rounded-3xl"
+          onClick={handleSort}
+        >
+          Sort By Price
+        </button>
       </div>
       <table className="table text-center">
         {/* head */}

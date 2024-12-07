@@ -3,7 +3,7 @@ import slide2 from "../assets/Fotolia_4437974_sport.png";
 import slide3 from "../assets/sports-tools.png";
 const Banner = () => {
   return (
-    <div className="carousel w-full">
+    <div className="carousel w-full z-0">
       <div id="slide1" className="carousel-item relative w-full">
         <img src={slide3} className="w-full" />
         <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
