@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
+import { Link, useLoaderData } from "react-router-dom";
 
 const AllEquipment = () => {
   const equipments = useLoaderData();
   const [sortedEquipments, setSortedEquipments] = useState(equipments);
-
+  <Helmet>
+    <title>SportFlex | Equipment</title>
+  </Helmet>;
   const handleSort = () => {
     const sorted = [...equipments].sort((a, b) => b.price - a.price);
     setSortedEquipments(sorted);

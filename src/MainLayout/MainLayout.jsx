@@ -9,6 +9,7 @@ const MainLayout = () => {
     <div className="font-montserrat font-bold max-w-7xl mx-auto">
       <Tooltip id="my-tooltip"></Tooltip>
       <Toaster></Toaster>
+
       <section>
         <Navbar></Navbar>
       </section>
