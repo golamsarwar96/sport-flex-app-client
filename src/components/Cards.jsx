@@ -18,7 +18,7 @@ const Cards = () => {
       setEquipments(data);
     }
   }, [category, data]);
-  console.log(equipments);
+  // console.log(equipments);
   return (
     <div>
       <h1 className="text-5xl">{category}</h1>

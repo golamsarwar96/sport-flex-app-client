@@ -18,7 +18,7 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    console.log(name, email, password);
+    // console.log(name, email, password);
 
     if (name.length < 5) {
       toast.error("Name must be more than 5 characters long.");
@@ -36,7 +36,7 @@ const Register = () => {
     //Creating User
     createUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        // console.log(result.user);
         const newUser = {
           name,
           photo,
@@ -49,18 +49,19 @@ const Register = () => {
         })
           .then(() => {})
           .catch((err) => {
-            console.log(err);
+            // console.log(err);
+            toast.error(err);
           });
         setUser(result.user);
 
-        fetch("http://localhost:5000/users", {
+        fetch("https://sport-flex-server.vercel.app/users", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(newUser),
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log("user created to sportflex db", data);
+            // console.log("user created to sportflex db", data);
             if (data.insertedId) {
               navigate(location?.state ? location.state : "/");
               Swal.fire({

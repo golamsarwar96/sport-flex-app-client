@@ -29,12 +29,14 @@ const router = createBrowserRouter([
           {
             path: "/",
             element: <Cards></Cards>,
-            loader: () => fetch("http://localhost:5000/equipmentslimited"),
+            loader: () =>
+              fetch("https://sport-flex-server.vercel.app/equipmentslimited"),
           },
           {
             path: "/category/:category",
             element: <Cards></Cards>,
-            loader: () => fetch("http://localhost:5000/equipments"),
+            loader: () =>
+              fetch("https://sport-flex-server.vercel.app/equipments"),
           },
         ],
       },
@@ -42,7 +44,7 @@ const router = createBrowserRouter([
       {
         path: "/allequipment",
         element: <AllEquipment></AllEquipment>,
-        loader: () => fetch("http://localhost:5000/equipments"),
+        loader: () => fetch("https://sport-flex-server.vercel.app/equipments"),
       },
       {
         path: "/addequipment",
@@ -59,13 +61,13 @@ const router = createBrowserRouter([
             <MyEquipment></MyEquipment>
           </PrivateList>
         ),
-        loader: () => fetch("http://localhost:5000/equipments"),
+        loader: () => fetch("https://sport-flex-server.vercel.app/equipments"),
       },
       {
         path: "/myequipment/:id",
         element: <UpdateEquipment></UpdateEquipment>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/equipments/${params.id}`),
+          fetch(`https://sport-flex-server.vercel.app/equipments/${params.id}`),
       },
       {
         path: "/login",
@@ -82,7 +84,7 @@ const router = createBrowserRouter([
             <EquipmentDetails></EquipmentDetails>
           </PrivateDetails>
         ),
-        loader: () => fetch("http://localhost:5000/equipments"),
+        loader: () => fetch("https://sport-flex-server.vercel.app/equipments"),
       },
       {
         path: "allequipment/:id",
@@ -91,7 +93,7 @@ const router = createBrowserRouter([
             <EquipmentDetails></EquipmentDetails>
           </PrivateDetails>
         ),
-        loader: () => fetch(`http://localhost:5000/equipments`),
+        loader: () => fetch(`https://sport-flex-server.vercel.app/equipments`),
       },
     ],
   },

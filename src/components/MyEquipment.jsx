@@ -13,19 +13,19 @@ const MyEquipment = () => {
   }
   const equipments = useLoaderData();
   const { _id } = equipments;
-  console.log(equipments);
+  // console.log(equipments);
   const [myEquipments, setMyEquipments] = useState([]);
   useEffect(() => {
     const equipmentList = [...equipments].filter(
       (equipment) => equipment?.email === user?.email
     );
-    console.log(equipmentList);
+    // console.log(equipmentList);
     setMyEquipments(equipmentList);
   }, []);
 
   //Deleting
   const handleDelete = (_id) => {
-    console.log(_id);
+    // console.log(_id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -36,12 +36,12 @@ const MyEquipment = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/equipments/${_id}`, {
+        fetch(`https://sport-flex-server.vercel.app/equipments/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            // console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire({
                 title: "Deleted!",

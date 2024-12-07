@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
-import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 
 const AddEquipment = () => {
@@ -33,11 +32,11 @@ const AddEquipment = () => {
       processing,
       quantity,
     };
-    console.log(name, email);
+    // console.log(name, email);
 
-    console.log(newEquipment);
+    // console.log(newEquipment);
     e.target.reset();
-    fetch("http://localhost:5000/equipments", {
+    fetch("https://sport-flex-server.vercel.app/equipments", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

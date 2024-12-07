@@ -33,14 +33,14 @@ const Login = () => {
         const lastSignInTime = result?.user?.metadata?.lastSignInTime;
         const loginInfo = { email, lastSignInTime };
 
-        fetch(`http://localhost:5000/users`, {
+        fetch(`https://sport-flex-server.vercel.app/users`, {
           method: "PATCH",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(loginInfo),
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            // console.log(data);
           });
       })
       .catch((error) => {

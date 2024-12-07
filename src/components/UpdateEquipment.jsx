@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 const UpdateEquipment = () => {
   const { user } = useContext(AuthContext);
   const equipments = useLoaderData();
-  console.log(equipments);
+  // console.log(equipments);
   const {
     _id,
     itemName,
@@ -49,7 +49,7 @@ const UpdateEquipment = () => {
       quantity,
     };
 
-    fetch(`http://localhost:5000/equipments/${_id}`, {
+    fetch(`https://sport-flex-server.vercel.app/equipments/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -58,7 +58,7 @@ const UpdateEquipment = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.modifiedCount > 0) {
           Swal.fire({
             title: "Success!",
