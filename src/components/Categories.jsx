@@ -3,7 +3,7 @@ import { NavLink, useLoaderData } from "react-router-dom";
 const Categories = ({ categories }) => {
   return (
     <div>
-      <h1 className="text-4xl font-bold text-center mt-10 md:w-[50%] mx-auto">
+      <h1 className="text-4xl font-bold text-center mt-16 md:w-[50%] mx-auto">
         Visit Different Sport Equipment{" "}
         <span className="text-amber-500 text-center text-5xl">Categories</span>
       </h1>

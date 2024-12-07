@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Card = ({ equipment }) => {
   const { _id, itemName, category, photo, price, rating } = equipment || {};
   return (
-    <div className="card bg-base-100 w-96 mx-auto shadow-xl p-3">
+    <div className="card bg-base-100 w-96 mx-auto shadow-xl p-3 hover:shadow-2xl mb-10">
       <figure>
         <img
           className="w-[360px] h-[360px] object-cover rounded-xl"

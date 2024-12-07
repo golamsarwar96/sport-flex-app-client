@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link, NavLink } from "react-router-dom";
 import logoIcon from "../assets/sports.png";
+import { Fade } from "react-awesome-reveal";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
