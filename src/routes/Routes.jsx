@@ -24,12 +24,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("../categories.json"),
+        loader: () => fetch("/categories.json"),
         children: [
           {
             path: "/",
             element: <Cards></Cards>,
-            loader: () => fetch("http://localhost:5000/equipments/limited"),
+            loader: () => fetch("http://localhost:5000/equipmentslimited"),
           },
           {
             path: "/category/:category",
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Blog></Blog>,
-        loader: () => fetch("../blog.json"),
+        loader: () => fetch("/blog.json"),
       },
 
       {
@@ -66,12 +66,12 @@ const router = createBrowserRouter([
         ),
         loader: () => fetch("http://localhost:5000/equipments"),
       },
-      // {
-      //   path: "myequipment/updateEquipment/:id",
-      //   element: <UpdateEquipment></UpdateEquipment>,
-      //   loader: ({ params }) =>
-      //     fetch(`http://localhost:5000/equipments/${params.id}`),
-      // },
+      {
+        path: "/myequipment/:id",
+        element: <UpdateEquipment></UpdateEquipment>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/equipments/${params.id}`),
+      },
       {
         path: "/login",
         element: <Login></Login>,

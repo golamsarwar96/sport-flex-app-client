@@ -12,6 +12,7 @@ const MyEquipment = () => {
     return <Loading></Loading>;
   }
   const equipments = useLoaderData();
+  const { _id } = equipments;
   console.log(equipments);
   const [myEquipments, setMyEquipments] = useState([]);
   useEffect(() => {
@@ -107,7 +108,7 @@ const MyEquipment = () => {
               </p>
             </div>
             <div className="flex gap-2 pt-2 p-5">
-              <Link to={`updateEquipment/${equipment._id}`}>
+              <Link to={`/myequipment/${equipment._id}`}>
                 <button className="px-5 py-2 text-white bg-cyan-900 rounded-3xl">
                   Update
                 </button>

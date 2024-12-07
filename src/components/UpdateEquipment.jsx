@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 const UpdateEquipment = () => {
   const { user } = useContext(AuthContext);
   const equipments = useLoaderData();
+  console.log(equipments);
   const {
     _id,
     itemName,
