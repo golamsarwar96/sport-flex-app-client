@@ -11,10 +11,8 @@ const PrivateDetails = ({ children }) => {
   }
   if (user && user?.email) {
     return children;
-  } else {
-    return <Navigate state={location.pathname} to="/login" replace={true} />;
   }
-  return <div></div>;
+  return <Navigate state={location.pathname} to="/login" replace={true} />;
 };
 
 export default PrivateDetails;

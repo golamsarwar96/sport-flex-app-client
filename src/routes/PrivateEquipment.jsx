@@ -11,10 +11,8 @@ const PrivateEquipment = ({ children }) => {
   }
   if (user && user?.email) {
     return children;
-  } else {
-    return <Navigate state={location.pathname} to={"/login"}></Navigate>;
   }
-  return <div></div>;
+  return <Navigate state={location.pathname} to={"/login"}></Navigate>;
 };
 
 export default PrivateEquipment;

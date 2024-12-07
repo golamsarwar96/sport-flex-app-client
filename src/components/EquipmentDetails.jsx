@@ -3,6 +3,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 
 const EquipmentDetails = () => {
   const equipmentData = useLoaderData();
+
   const { id } = useParams();
   const [equipments, setEquipments] = useState({});
 

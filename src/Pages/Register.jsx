@@ -1,18 +1,15 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
-import Loading from "../components/Loading";
 import { BsGoogle } from "react-icons/bs";
 
 const Register = () => {
-  const { createUser, setUser, updateUserProfile, loading, signInWithGoogle } =
+  const { createUser, setUser, updateUserProfile, signInWithGoogle } =
     useContext(AuthContext);
-  if (loading) {
-    return <Loading></Loading>;
-  }
   const navigate = useNavigate();
+  const location = useLocation();
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -24,7 +21,6 @@ const Register = () => {
     console.log(name, email, password);
 
     if (name.length < 5) {
-      setError({ ...error, name: "Name must be at least 5 characters long." });
       toast.error("Name must be more than 5 characters long.");
       return;
     }
@@ -51,9 +47,7 @@ const Register = () => {
           displayName: name,
           photoURL: photo,
         })
-          .then(() => {
-            navigate("/");
-          })
+          .then(() => {})
           .catch((err) => {
             console.log(err);
           });
@@ -68,6 +62,7 @@ const Register = () => {
           .then((data) => {
             console.log("user created to sportflex db", data);
             if (data.insertedId) {
+              navigate(location?.state ? location.state : "/");
               Swal.fire({
                 title: "Success!",
                 text: "User Created successfully.",
