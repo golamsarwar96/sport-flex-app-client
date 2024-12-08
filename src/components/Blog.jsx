@@ -10,9 +10,7 @@ const Blog = () => {
         Latest <span className="text-amber-500">Blogs</span>
       </h1>
       <p className="text-center text-xl mt-3 mb-4">
-        <span className="text-amber-500">
-          Find Out More <span className="text-black">About Sports</span>
-        </span>
+        <span className="text-amber-500">Find Out More About Sports</span>
       </p>
       <div className="flex flex-col md:flex-row gap-8 ">
         <div className="p-5 rounded-lg bg-base-100 shadow-lg hover:shadow-2xl">

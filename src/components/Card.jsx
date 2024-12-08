@@ -1,4 +1,3 @@
-import { BiStar } from "react-icons/bi";
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 

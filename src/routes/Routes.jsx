@@ -10,7 +10,6 @@ import Register from "../Pages/Register";
 import ResetPassword from "../Pages/ResetPassword";
 import Cards from "../components/Cards";
 import EquipmentDetails from "../components/EquipmentDetails";
-import Blog from "../components/Blog";
 import PrivateEquipment from "./PrivateEquipment";
 import PrivateList from "./PrivateList";
 import PrivateDetails from "./PrivateDetails";

@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link, NavLink } from "react-router-dom";
 import logoIcon from "../assets/sports.png";
-import { Fade } from "react-awesome-reveal";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -86,7 +86,11 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
+
       <div className="navbar-end flex gap-3">
+        <div>
+          <ThemeToggle></ThemeToggle>
+        </div>
         {user && user?.email ? (
           <div className="flex text-sm items-center gap-2 text-white  font-semibold rounded-3xl">
             <img
