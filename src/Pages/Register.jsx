@@ -90,11 +90,11 @@ const Register = () => {
       });
   };
   return (
-    <div className="flex justify-center items-center gap-5 flex-col my-10 p-2">
-      <h1 className="text-center text-4xl w-[90%] md:w-full mx-auto">
-        Register To <span className="text-amber-400">SportFlex</span>
+    <div className="flex justify-center items-center gap-5 flex-col bg-cyan-800">
+      <h1 className="text-center text-4xl w-[90%] md:w-full mx-auto mt-10 text-white">
+        Register To <span className="text-amber-500">SportFlex</span>
       </h1>
-      <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl relative ">
+      <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl relative mb-10">
         <form onSubmit={handleRegister} className="card-body">
           <div className="form-control">
             <label className="label">
@@ -145,12 +145,12 @@ const Register = () => {
             />
           </div>
           <div className="form-control mt-6">
-            <button className="btn btn-primary">Register</button>
+            <button className="btn bg-cyan-950 text-white">Register</button>
           </div>
           <div>
             <button
               onClick={handleGoogleSignIn}
-              className="btn btn-primary w-full"
+              className="btn bg-amber-500 text-cyan-800 font-extrabold w-full"
             >
               <BsGoogle></BsGoogle> Sign In With Google
             </button>

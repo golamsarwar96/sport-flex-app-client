@@ -64,9 +64,11 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center items-center gap-5 flex-col my-10">
-      <h1 className="text-center text-4xl">Login To SportFlex</h1>
-      <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl relative ">
+    <div className="flex justify-center items-center gap-5 flex-col bg-cyan-800">
+      <h1 className="text-center text-white text-4xl mt-10">
+        Login To <span className="text-amber-500">SportFlex</span>
+      </h1>
+      <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl relative mb-10 ">
         <form onSubmit={handleLogin} className="card-body">
           <div className="form-control">
             <label className="label">
@@ -109,12 +111,12 @@ const Login = () => {
             </label>
           </div>
           <div className="form-control mt-6">
-            <button className="btn btn-primary">Login</button>
+            <button className="btn bg-cyan-950 text-white">Login</button>
           </div>
           <div>
             <button
               onClick={handleGoogleSignIn}
-              className="btn btn-primary w-full"
+              className="btn bg-amber-500 text-cyan-800 font-extrabold w-full"
             >
               <BsGoogle></BsGoogle> Sign In With Google
             </button>

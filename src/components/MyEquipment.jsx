@@ -60,7 +60,9 @@ const MyEquipment = () => {
   };
   return (
     <div className=" my-10">
-      <h1 className="text-5xl">My Equipment : {equipments.length}</h1>
+      <h1 className="text-5xl text-center mb-5">
+        My Equipment <span className="text-amber-500">List</span>
+      </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {myEquipments.map((equipment, index) => (
           <div className="bg-white rounded-xl shadow-sm overflow-hidden max-w-sm hover:shadow-md transition-shadow duration-300">
