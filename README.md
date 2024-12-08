@@ -20,4 +20,4 @@
 
 ## LIVE LINK: 🌐
 
-https://sport-flex-51779.web.app/
+https://sport-flex-51779.web.app
