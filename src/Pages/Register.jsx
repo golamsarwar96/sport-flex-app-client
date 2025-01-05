@@ -54,7 +54,7 @@ const Register = () => {
           });
         setUser(result.user);
 
-        fetch("https://sport-flex-server.vercel.app/users", {
+        fetch("http://localhost:5000/users", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(newUser),

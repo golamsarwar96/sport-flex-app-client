@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 
 const ResetPassword = () => {
   const emailRef = useRef();
-  const { resetPassword } = useContext(AuthContext);
+  const { user, resetPassword } = useContext(AuthContext);
   const handleForgetPassword = () => {
     const email = emailRef.current.value;
     if (!email) {
@@ -22,15 +22,15 @@ const ResetPassword = () => {
   };
 
   return (
-    <div className="flex flex-col gap-5 justify-center items-center mt-64">
-      <h1 className="text-3xl font-bold text-center">
-        Type your <span className="text-blue-600">email</span> to reset your
+    <div className="flex flex-col gap-5 justify-center items-center mt-64 bg-cyan-800">
+      <h1 className="text-3xl font-bold text-center text-white">
+        Type your <span className="text-amber-600">email</span> to reset your
         <span className="text-blue-600"> password</span>
       </h1>
       <input
         type="text"
         ref={emailRef}
-        placeholder="Type here"
+        placeholder="Type Your Email"
         name="email"
         className="input input-bordered input-primary border-blue-600 w-full max-w-xs"
       />
