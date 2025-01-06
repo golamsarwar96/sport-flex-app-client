@@ -61,6 +61,22 @@ const Navbar = () => {
           >
             All Sport Equipment
           </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "bg-amber-500 px-4 py-2 rounded-3xl" : ""
+            }
+            to="/aboutUs"
+          >
+            About Us
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "bg-amber-500 px-4 py-2 rounded-3xl" : ""
+            }
+            to="/contactUs"
+          >
+            Contact Us
+          </NavLink>
         </div>
       )}
     </div>

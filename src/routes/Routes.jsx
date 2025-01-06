@@ -14,6 +14,8 @@ import PrivateEquipment from "./PrivateEquipment";
 import PrivateList from "./PrivateList";
 import PrivateDetails from "./PrivateDetails";
 import UpdateEquipment from "../components/UpdateEquipment";
+import AboutUs from "../components/AboutUs";
+import Contact from "../components/Contact";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +38,14 @@ const router = createBrowserRouter([
             loader: () => fetch("http://localhost:5000/equipments"),
           },
         ],
+      },
+      {
+        path: "/aboutUs",
+        element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "contactUs",
+        element: <Contact></Contact>,
       },
 
       {
