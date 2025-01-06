@@ -18,7 +18,7 @@ const Card = ({ equipment }) => {
           <p className="mx-auto text-center px-1 py-1 bg-cyan-950 w-full text-white">
             {category}
           </p>
-          <p className="mx-auto text-center px-1 py-1 bg-cyan-950 absolute top-6 right-9 text-white">
+          <p className="mx-auto text-center px-1 py-1 bg-cyan-950 absolute top-7 right-8 text-white">
             ${price}
           </p>
           <p className="mx-auto flex items-center justify-center gap-2 text-center md:px-3 px-4 py-1 bg-cyan-950 w-full text-white">

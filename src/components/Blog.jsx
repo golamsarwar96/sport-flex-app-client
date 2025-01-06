@@ -5,11 +5,11 @@ import img3 from "../assets/blogImg1.png";
 
 const Blog = () => {
   return (
-    <div className="mt-10 mb-28">
+    <div className="mt-12 mb-24 px-9">
       <h1 className="text-center text-5xl">
         Latest <span className="text-amber-500">Blogs</span>
       </h1>
-      <p className="text-center text-xl mt-3 mb-4">
+      <p className="text-center text-2xl mt-3 mb-16">
         <span className="text-amber-500">Find Out More About Sports</span>
       </p>
       <div className="flex flex-col md:flex-row gap-8 ">
