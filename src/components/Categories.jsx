@@ -10,7 +10,7 @@ const Categories = ({ categories }) => {
           Categories
         </span>
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center text-center md:p-12 p-16  lg:gap-20 gap-10 md:my-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center text-center md:p-12 p-12  lg:gap-20 gap-10 md:my-6">
         {categories.map((category) => (
           <NavLink
             className={({ isActive }) =>

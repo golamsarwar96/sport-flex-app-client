@@ -21,10 +21,7 @@ const Cards = () => {
   // console.log(equipments);
   return (
     <div>
-      <h1 className="text-5xl text-center mb-10 px-5 py-5 bg-amber-500 w-1/4 mx-auto">
-        {category}
-      </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-6 mb-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-center mb-2 ">
         {equipments.map((equipment, index) => (
           <Card key={index} equipment={equipment}></Card>
         ))}

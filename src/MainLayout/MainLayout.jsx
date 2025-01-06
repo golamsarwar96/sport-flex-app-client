@@ -6,7 +6,7 @@ import { Tooltip } from "react-tooltip";
 
 const MainLayout = () => {
   return (
-    <div className="font-montserrat font-bold max-w-screen-2xl mx-auto">
+    <div className="font-montserrat font-bold max-w-screen-2xl mx-auto bg-gray-50">
       <Tooltip id="my-tooltip"></Tooltip>
       <Toaster></Toaster>
 
