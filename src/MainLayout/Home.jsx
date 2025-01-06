@@ -3,6 +3,8 @@ import { Outlet, useLoaderData } from "react-router-dom";
 import Categories from "../components/Categories";
 import Blog from "../components/Blog";
 import Company from "../components/Company";
+import Review from "../components/Review";
+import Discount from "../components/Discount";
 const Home = () => {
   const categories = useLoaderData();
   return (
@@ -21,6 +23,14 @@ const Home = () => {
 
       <section>
         <Blog></Blog>
+      </section>
+
+      <section>
+        <Discount></Discount>
+      </section>
+
+      <section>
+        <Review></Review>
       </section>
 
       <section>

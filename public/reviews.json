@@ -1,0 +1,26 @@
+[
+  {
+    "productName": "Premium Cricket Bat",
+    "customerName": "John Doe",
+    "reviewerImage": "https://i.ibb.co.com/DWvJ2T0/created-random-people-using-chatgpt-midjourney-do-you-know-v0-q1aa450i5dqb1.webp",
+    "rating": 5,
+    "reviewText": "Excellent bat with superb balance and durability. Perfect for professional matches!",
+    "reviewDate": "2024-01-01"
+  },
+  {
+    "productName": "Pro Cricket Gloves",
+    "customerName": "Jane Smith",
+    "reviewerImage": "https://i.ibb.co.com/KrMhWpT/images.jpg",
+    "rating": 4.5,
+    "reviewText": "Comfortable gloves with great grip. Slightly tight fit but overall great quality.",
+    "reviewDate": "2024-01-02"
+  },
+  {
+    "productName": "Official Match Football",
+    "customerName": "Mike Johnson",
+    "reviewerImage": "https://i.ibb.co.com/H2ZMSFM/360-F-678097580-mgs-NEISed-I7fng-Ow-Iip-Yt-EU0-T6-SN8q-Kv.jpg",
+    "rating": 4.7,
+    "reviewText": "The football has great durability and control. Perfect for competitive play.",
+    "reviewDate": "2024-01-03"
+  }
+]

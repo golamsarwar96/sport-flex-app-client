@@ -9,7 +9,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 const Banner = () => {
   return (
-    <div className="h-[60vh] mx-auto">
+    <div className="h-[70vh] mx-auto">
       {" "}
       {/* Set height to 60% of the viewport */}
       <Swiper
@@ -28,19 +28,19 @@ const Banner = () => {
       >
         <SwiperSlide>
           <img src={slide3} className="w-full h-full object-cover" />
-          <h1 className="lg:text-5xl md:text-3xl text-xl absolute lg:w-1/2 md:w-3/4 w-[60%] mx-auto lg:left-96 md:left-24 left-20 md:top-44 top-44 lg:top-48 text-center bg-amber-400 text-black p-5">
+          <h1 className="lg:text-5xl md:text-3xl text-xl absolute lg:w-1/2 md:w-3/4 w-[60%] mx-auto lg:left-[365px] md:left-24 left-20 md:top-36 top-36 lg:top-40 text-center bg-amber-400 text-black p-5">
             Buy All Kinds Of Sports Accessories In Affordable Price
           </h1>
         </SwiperSlide>
         <SwiperSlide>
           <img src={slide2} className="w-full h-full object-cover" />
-          <h1 className="lg:text-5xl md:text-3xl text-xl absolute lg:w-1/2 md:w-3/4 w-[60%] mx-auto lg:left-96 md:left-24 left-20 md:top-44 top-44 lg:top-[220px] text-center bg-amber-400 text-black p-5">
+          <h1 className="lg:text-5xl md:text-3xl text-xl absolute lg:w-1/2 md:w-3/4 w-[60%] mx-auto lg:left-[365px] md:left-24 left-20 md:top-36 top-36 lg:top-[180px] text-center bg-amber-400 text-black p-5">
             Create Account And Make Your Own Equipment List
           </h1>
         </SwiperSlide>
         <SwiperSlide>
           <img src={slide1} className="w-full h-full object-cover" />
-          <h1 className="lg:text-5xl md:text-3xl text-xl absolute lg:w-1/2 md:w-3/4 w-[60%] mx-auto lg:left-96 md:left-24 left-20 md:top-44 top-44 lg:top-48 text-center bg-amber-400 text-black p-5">
+          <h1 className="lg:text-5xl md:text-3xl text-xl absolute lg:w-1/2 md:w-3/4 w-[60%] mx-auto lg:left-[365px] md:left-24 left-20 md:top-36 top-36 lg:top-40 text-center bg-amber-400 text-black p-5">
             Buy The Best Sports Equipment In Few Simple Clicks
           </h1>
         </SwiperSlide>
