@@ -7,44 +7,67 @@ const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
 
   const links = (
-    <div className="flex gap-3 p-2 bg-cyan-950  border-none rounded-xl lg:items-center flex-col lg:flex-row  text-white z-10">
-      <NavLink
-        className={({ isActive }) =>
-          isActive ? "bg-amber-500 px-4 py-2 rounded-3xl" : ""
-        }
-        to="/"
-      >
-        Home
-      </NavLink>
-      <NavLink
-        className={({ isActive }) =>
-          isActive ? "bg-amber-500 px-4 py-2 rounded-3xl" : ""
-        }
-        to="/allequipment"
-      >
-        All Sport Equipment
-      </NavLink>
-      <NavLink
-        className={({ isActive }) =>
-          isActive ? "bg-amber-500 px-4 py-2 rounded-3xl" : ""
-        }
-        to="addequipment"
-      >
-        Add Equipment
-      </NavLink>
-      <NavLink
-        className={({ isActive }) =>
-          isActive ? "bg-amber-500 px-4 py-2 rounded-3xl" : ""
-        }
-        to="/myequipment"
-      >
-        My Equipment List
-      </NavLink>
+    <div className="flex gap-10 p-2 bg-cyan-950  border-none rounded-xl lg:items-center flex-col lg:flex-row  text-white z-10">
+      {user && user?.email ? (
+        <div className="flex md:items-start items-start lg:flex-row lg:items-center flex-col lg:gap-5 ">
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "bg-amber-500 px-4 py-2 rounded-3xl" : ""
+            }
+            to="/"
+          >
+            Home
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "bg-amber-500 px-4 py-2 rounded-3xl" : ""
+            }
+            to="/allequipment"
+          >
+            All Sport Equipment
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "bg-amber-500 px-4 py-2 rounded-3xl" : ""
+            }
+            to="addequipment"
+          >
+            Add Equipment
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "bg-amber-500 px-4 py-2 rounded-3xl" : ""
+            }
+            to="/myequipment"
+          >
+            My Equipment List
+          </NavLink>
+        </div>
+      ) : (
+        <div className="flex items-center gap-3">
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "bg-amber-500 px-4 py-2 rounded-3xl" : ""
+            }
+            to="/"
+          >
+            Home
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "bg-amber-500 px-4 py-2 rounded-3xl" : ""
+            }
+            to="/allequipment"
+          >
+            All Sport Equipment
+          </NavLink>
+        </div>
+      )}
     </div>
   );
 
   return (
-    <div className="navbar bg-cyan-950">
+    <div className="navbar bg-cyan-950 max-w-screen-2xl px-12">
       <div className="navbar-start">
         <div className="dropdown text-white">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
