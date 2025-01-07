@@ -92,8 +92,8 @@ const Register = () => {
   };
   return (
     <div className="flex justify-center items-center gap-5 flex-col bg-cyan-950">
-      <h1 className="text-center text-white text-4xl mt-10">
-        Register To <span className="text-amber-500">SportFlex</span>
+      <h1 className="text-center text-white text-4xl mt-10 mb-5">
+        Welcome To <span className="text-amber-500">SportFlex</span>
       </h1>
       <div className="lg:w-[70%] w-full mx-auto flex px-16 bg-cyan-800 pt-10 flex-col lg:flex-row">
         <div>
