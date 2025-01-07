@@ -12,7 +12,6 @@ import Cards from "../components/Cards";
 import EquipmentDetails from "../components/EquipmentDetails";
 import PrivateEquipment from "./PrivateEquipment";
 import PrivateList from "./PrivateList";
-import PrivateDetails from "./PrivateDetails";
 import UpdateEquipment from "../components/UpdateEquipment";
 import AboutUs from "../components/AboutUs";
 import Contact from "../components/Contact";
@@ -88,20 +87,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/:id",
-        element: (
-          <PrivateDetails>
-            <EquipmentDetails></EquipmentDetails>
-          </PrivateDetails>
-        ),
+        element: <EquipmentDetails></EquipmentDetails>,
         loader: () => fetch("https://sport-flex-server.vercel.app/equipments"),
       },
       {
         path: "allequipment/:id",
-        element: (
-          <PrivateDetails>
-            <EquipmentDetails></EquipmentDetails>
-          </PrivateDetails>
-        ),
+        element: <EquipmentDetails></EquipmentDetails>,
         loader: () => fetch(`https://sport-flex-server.vercel.app/equipments`),
       },
     ],
