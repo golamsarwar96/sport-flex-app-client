@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 import { BsGoogle } from "react-icons/bs";
+import signUpImg from "../assets/signup.jpg";
 
 const Register = () => {
   const { createUser, setUser, updateUserProfile, signInWithGoogle } =
@@ -90,78 +91,87 @@ const Register = () => {
       });
   };
   return (
-    <div className="flex justify-center items-center gap-5 flex-col bg-cyan-800">
-      <h1 className="text-center text-4xl w-[90%] md:w-full mx-auto mt-10 text-white">
+    <div className="flex justify-center items-center gap-5 flex-col bg-cyan-950">
+      <h1 className="text-center text-white text-4xl mt-10">
         Register To <span className="text-amber-500">SportFlex</span>
       </h1>
-      <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl relative mb-10">
-        <form onSubmit={handleRegister} className="card-body">
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Name</span>
-            </label>
-            <input
-              type="text"
-              placeholder="Your Name"
-              name="name"
-              className="input input-bordered"
-              required
-            />
-          </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Photo URL</span>
-            </label>
-            <input
-              type="text"
-              placeholder="Enter a valid photo URL"
-              name="photo"
-              className="input input-bordered"
-              required
-            />
-          </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Email</span>
-            </label>
-            <input
-              type="email"
-              placeholder="email"
-              name="email"
-              className="input input-bordered"
-              required
-            />
-          </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Password</span>
-            </label>
-            <input
-              type="password"
-              placeholder="password"
-              name="password"
-              className="input input-bordered"
-              required
-            />
-          </div>
-          <div className="form-control mt-6">
-            <button className="btn bg-cyan-950 text-white">Register</button>
-          </div>
-          <div>
-            <button
-              onClick={handleGoogleSignIn}
-              className="btn bg-amber-500 text-cyan-800 font-extrabold w-full"
-            >
-              <BsGoogle></BsGoogle> Sign In With Google
-            </button>
-          </div>
-          <h1 className="text-center mt-4">
-            Alreay have an account ?{" "}
-            <Link className="text-cyan-700" to="/login">
-              Login
-            </Link>
-          </h1>
-        </form>
+      <div className="lg:w-[70%] w-full mx-auto flex px-16 bg-cyan-800 pt-10 flex-col lg:flex-row">
+        <div>
+          <img
+            className="lg:w-[600px] md:w-full w-[600px] h-[608px] object-cover lg:rounded-tl-2xl lg:rounded-bl-2xl"
+            src={signUpImg}
+            alt=""
+          />
+        </div>
+        <div className="bg-gray-100 lg:w-1/2 w-full shrink-0 shadow-2xl relative mb-10 flex justify-center items-center lg:rounded-tr-2xl lg:rounded-br-2xl">
+          <form onSubmit={handleRegister} className="card-body">
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Name</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Your Name"
+                name="name"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Photo URL</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Enter a valid photo URL"
+                name="photo"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Email</span>
+              </label>
+              <input
+                type="email"
+                placeholder="email"
+                name="email"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Password</span>
+              </label>
+              <input
+                type="password"
+                placeholder="password"
+                name="password"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control mt-6">
+              <button className="btn bg-cyan-950 text-white">Register</button>
+            </div>
+            <div>
+              <button
+                onClick={handleGoogleSignIn}
+                className="btn bg-amber-500 text-cyan-800 font-extrabold w-full"
+              >
+                <BsGoogle></BsGoogle> Sign In With Google
+              </button>
+            </div>
+            <h1 className="text-center mt-4">
+              Alreay have an account ?{" "}
+              <Link className="text-cyan-700" to="/login">
+                Login
+              </Link>
+            </h1>
+          </form>
+        </div>
       </div>
     </div>
   );

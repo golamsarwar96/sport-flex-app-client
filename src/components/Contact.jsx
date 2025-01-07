@@ -1,7 +1,4 @@
 import { useState } from "react";
-import { FaPhone } from "react-icons/fa";
-import { FaMapLocation } from "react-icons/fa6";
-import { MdEmail } from "react-icons/md";
 import emailjs from "@emailjs/browser";
 import contactUsImg from "../assets/contactUs.jpg";
 import toast from "react-hot-toast";

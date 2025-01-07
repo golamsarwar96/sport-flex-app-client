@@ -68,15 +68,15 @@ const Login = () => {
       <h1 className="text-center text-white text-4xl mt-10">
         Welcome Back To <span className="text-amber-500">SportFlex</span>
       </h1>
-      <div className="w-[70%] mx-auto flex px-16 bg-cyan-800 pt-10">
+      <div className="lg:w-[70%] w-full mx-auto flex px-16 bg-cyan-800 pt-10 flex-col lg:flex-row">
         <div>
           <img
-            className="w-[456px] rounded-tl-2xl rounded-bl-2xl"
+            className="lg:w-[456px] md:w-full w-[456px] object-cover lg:rounded-tl-2xl lg:rounded-bl-2xl"
             src={loginImg}
             alt=""
           />
         </div>
-        <div className=" bg-gray-100 w-1/2 shrink-0 shadow-2xl relative mb-10 flex justify-center items-center rounded-tr-2xl rounded-br-2xl">
+        <div className=" bg-gray-100 lg:w-1/2 w-full shrink-0 shadow-2xl relative mb-10 flex justify-center items-center lg:rounded-tr-2xl lg:rounded-br-2xl">
           <form onSubmit={handleLogin} className="card-body ">
             <div className="form-control">
               <label className="label">
