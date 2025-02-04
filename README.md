@@ -1,14 +1,14 @@
 <div align="center">
-  <img src="https://i.ibb.co.com/t21ShSV/project1.png"  />
+  <img src="https://i.ibb.co.com/Q7f12TZH/sportflexss.png"  />
 </div>
 
-# Project Name : Sport Flex 🏏
+# Project Name: Sport Flex 🏏
 
 "Sport Flex" is your ultimate destination for all things sports. Whether you’re an athlete, a coach, or a fitness enthusiast, our website is designed to fuel your passion for sports and fitness. With a sleek and engaging interface, you can explore a variety of sections that make navigation effortless and enjoyable. From discovering top-quality sports gear and accessories tailored for every game to browsing curated categories for Cricket, Football, Hockey, and Tennis, Sport Flex has it all. Be inspired by stories of athletes and their winning moments with our products, while staying informed with insightful blogs. Sport Flex is committed to empowering athletes with premium products and a platform that celebrates the love of sports. Play your best game with Sport Flex!
 
 ## 5 Key Features Of Sport Flex 🎯
 
-• A user friendly Navbar to browse through the full website. <br/>
+• A user-friendly Navbar to browse through the full website. <br/>
 • Category Based Sports Equipment.<br/>
 • Adding Sports Equipment Functionality. <br/>
 • A Secure Equipment List to store all the equipment you love. <br/>
@@ -36,35 +36,31 @@
 • swiper": "^11.2.0" <br/>
 
 
-## Run On Your Machine 
+# Run On Your Machine 
 
-1. Clone Repository
-   • Click on the green "Code" button. <br/>
-   • Copy the HTTPS URL. <br/>
-   • Open your terminal or command prompt and navigate to the directory where you want to clone the project. <br/>
+## Installation
 
-     git clone https://github.com/golamsarwar96/sport-flex-app-client.git <br/>
+### **1. Clone the Repository**  
+```sh
+git clone https://github.com/golamsarwar96/sport-flex-app-client.git
+```
+### **2. Install Dependencies**
 
-   • Navigate into the project folder: <br/>
+```sh
+npm install
+```
+### **3. Environment Configuration**
+Create a .env file in the project root and add the following environment variables <br/>
 
-     cd project-name <br/>
+```sh
+REACT_APP_API_URL=<Your API URL>
+REACT_APP_FIREBASE_API_KEY=<Your Firebase API Key>
+```
 
-2. Install Dependencies <br/>
-   • Check package.json <br/>
-   • Run the command <br/>
-
-     npm install <br/>
-
-   • Check Configuration Files: <br/>
-     Review environment files like .env for any necessary API keys or database credentials. <br/>
-
-3. Run The Project <br/>
-   • Run the command <br/>
-
-     npm run dev <br/>
-
-
+### **4. Run the Project**
+```sh
+npm run dev
+```
 
 ## LIVE LINK: 🌐
-
 https://sport-flex-51779.web.app
